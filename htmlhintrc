@@ -1,0 +1,195 @@
+{
+  /*
+  attrが小文字になっているか
+  Level: error
+  good:<img src="test.png" alt="test">
+  bad:<img SRC="test.png" ALT="test">
+  */
+  "attr-lowercase": true,
+
+  /*
+  Level: error
+  attrがダブルクオーテーションで囲われているか
+  good:<a href="" title="abc">
+  bad:<a href='' title=abc>
+  */
+  "attr-value-double-quotes": true,
+
+  /*
+  Level: error
+  初めにdoctypeが宣言されているか
+  good:<!DOCTYPE HTML><html>
+  bad:<!--comment--><!DOCTYPE HTML><html>
+  */
+  "doctype-first": true,
+
+  /*
+  Level: error
+  タグの閉じ忘れがないか
+  good:<ul><li></li></ul>
+  bad:
+  <ul><li></ul>
+  <ul></li></ul>
+  */
+  "tag-pair": true,
+
+  /*
+  特殊文字がエスケープ処理されているか
+  Level: error
+  good:<span>aaa&gt;bbb&lt;ccc</span>
+  bad:<span>aaa>bbb<ccc</span>
+  */
+  "spec-char-escape": true,
+
+  /*
+  idが重複していないか
+  Level: error
+  good:<div id="id1"></div><div id="id2"></div>
+  bad:<div id="id1"></div><div id="id1"></div>
+  */
+  "id-unique": true,
+
+  /*
+  srcが入力されているか
+  Level: error
+  good:<img src="test.png" />
+  bad:<img src />
+  */
+  "src-not-empty": true,
+
+  /*
+  attrが重複していないか
+  Level: error
+  good:<img src="a.png" />
+  bad:<img src="a.png" src="b.png" />
+  */
+  "attr-no-duplication": true,
+
+  /*
+  titleが入力されているか
+  Level: error
+  good:<html><head><title>test</title></head></html>
+  bad:<html><head><title></title></head></html>
+  */
+  "title-require": true,
+
+  /*
+  tagが小文字になっているか
+  Level: error
+  good:<span><div>
+  bad:<SPAN><BR>
+  */
+  "tagname-lowercase": true,
+
+  /*
+  Level: error
+  attrが空でないか
+  good:<input type="button" disabled="disabled">
+  bad:<input type="button" disabled>
+  */
+  "attr-value-not-empty": true,
+
+  /*
+  Level: warning
+  単独タグの閉じがされているか
+  good:<br />
+  bad:<br>
+  */
+  "tag-self-close": false,
+
+  /*
+  Level: warning
+  head内にscriptがないか
+  good:<body><script type="text/javascript" src="test.js"></script></body>
+  bad:<head><script type="text/javascript" src="test.js"></script></head>
+  */
+  "head-script-disabled": false,
+
+  /*
+  Level: warning
+  altが入力されているか
+  good:<img src="test.png" alt="test">
+  bad:<img src="test.png">
+  */
+  "alt-require": true,
+
+  /*
+  Level: warning
+  doctypeがhtml5か
+  good:<!DOCTYPE HTML><html>
+  */
+  "doctype-html5": true,
+
+  /*
+  Level: warning
+  id,classの書き方が統一されているか
+  good:
+  underline: <div id="aaa_bbb">
+  dash: <div id="aaa-bbb">
+  hump: <div id="aaaBbb">
+  */
+  "id-class-value": "underline",
+
+  /*
+  Level: warning
+  styleタグを使っていないか
+  bad:
+  <head><style type="text/css"></style></head>
+  <body><style type="text/css"></style></body>
+  */
+  "style-disabled": true,
+
+  /*
+  Level: warning
+  インラインでstyleタグを使っていないか
+  bad:<div style="color:red"></div>
+  */
+  "inline-style-disabled": true,
+  /*
+  Level: warning
+  インラインにscriptを使ってないか
+  bad:
+  <img src="test.gif" onclick="alert(1);">
+  <img src="javascript:alert(1)">
+  <a href="javascript:alert(1)">test1</a>
+  */
+  "inline-script-disabled": true,
+
+  /*
+  Level: warning
+  インデントがタブとスペースが混ざってないか
+  space: space mode (only space for indentation)
+  space4: space mode and require length
+  tab: tab mode (only tab for indentation)
+  false: disable rule
+  */
+  "space-tab-mixed-disabled": "tab",
+
+  /*
+  Level: warning
+  id,classにadを使っていないか
+  good:<div id="adcontainer"></div>
+  bad:
+  <div id="ad-container"></div>
+  <div id="ad_container"></div>
+  */
+  "id-class-ad-disabled": true,
+
+  /*
+  Level: warning
+  hrefの値が絶対パスか相対パスか
+  abs: absolute mode
+  rel: relative mode
+  false: disable rule
+  */
+  "href-abs-or-rel": "rel",
+
+  /*
+  Level: warning
+  attrに安全でないものを指定してないか
+  good: <li><a href="https://vimeo.com/album/1951235/video/56931059">Sud Web 2012</a></li>
+  bad: <li><a href="https://vimeo.com/album/1951235/video/56931059‎\u0009‎">Sud Web 2012</a></li>
+  regexp: /[\u0000-\u0009\u000b\u000c\u000e-\u001f\u007f-\u009f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/
+  */
+  "attr-unsafe-chars": true
+}

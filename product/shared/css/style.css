@@ -1,0 +1,15 @@
+h1 {
+  color: red;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+h1:hover {
+  color: blue;
+  font-size: 60px;
+}
+
+p {
+  font-size: 12px;
+  font-weight: bold;
+}
