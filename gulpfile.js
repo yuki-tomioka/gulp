@@ -1,8 +1,10 @@
 var gulp = require('gulp');//gulpを使う（必須）
 var sass = require('gulp-sass');//sassを使う
 var autoprefixer = require('gulp-autoprefixer');//ベンダープレフィックスを自動でつける
+var sourcemaps = require('gulp-sourcemaps');//ソースマップを作るのに使う
+var cleancss  = require('gulp-clean-css');//cssの圧縮に使う
 var concat = require('gulp-concat');//ファイルの結合
-var htmlhint = require('gulp-htmlhint');//htmlの構文チェックにhtmlhintを使u
+var htmlhint = require('gulp-htmlhint');//htmlの構文チェックにhtmlhintを使う
 var browserSync = require('browser-sync');//ブラウザの同期にbrowser-syncを使う
 var notify = require('gulp-notify');//デスクトップに通知を出すgulp-notifyを使う
 var plumber = require('gulp-plumber');//エラーが出てもタスクが止まらないようにgulp-plumberを使う
@@ -15,15 +17,16 @@ gulp.task('sass'/*タスク名*/, function() {//処理内容
     .pipe(plumber({
         errorHandler: notify.onError("Error: <%= error.message %>")//エラーメッセージの通知
     }))
+    .pipe(sourcemaps.init())
     .pipe(sass({
-        outputStyle: 'expanded',//オプションとして出力形式を指定(expanded,nested,compact,compressed)
-        sourceMap: true,//ソースマップを出すか
-        sourceComments: false//ソースコメントを出すか
+        // outputStyle: 'expanded',//オプションとして出力形式を指定(expanded,nested,compact,compressed)
     }))//sassを実行
     .pipe(autoprefixer({
         browsers: ['last 2 versions', 'ie >= 9']//対応ブラウザの指定
     }))
+    .pipe(cleancss())//cssを圧縮
     .pipe(concat('style.css'))//cssをstyle.cssとして結合
+    .pipe(sourcemaps.write('../maps'))//ソースマップを出力
     .pipe(gulp.dest('product/shared/css'))//出力先を指定
     .pipe(browserSync.stream())//ブラウザを再描画、リロードにしたい場合はreload()にする
     .pipe(notify({//コンパイル完了を通知
