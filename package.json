@@ -1,0 +1,23 @@
+{
+  "name": "gulp",
+  "version": "1.0.0",
+  "description": "first set for coding with gulp",
+  "keywords": "gulp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuki-tomioka/gulp.git"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlhint": "^0.3.1",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "imagemin-pngquant": "^5.0.1"
+  }
+}
