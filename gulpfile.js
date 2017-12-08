@@ -76,4 +76,5 @@ gulp.task('default', function() {//defaultで指定したtaskはgulpコマンド
     gulp.watch('work/**/*.scss'/*監視対象の指定*/,['sass']/*実行するタスクを指定*/);
     gulp.watch('work/**/*.html'/*監視対象の指定*/,['html']/*実行するタスクを指定*/);
     gulp.watch('work/**/*.js'/*監視対象の指定*/,['js']/*実行するタスクを指定*/);
+    gulp.watch('work/**/*.{png,jpg}'/*監視対象の指定*/,['imgmin']/*実行するタスクを指定*/);
 });
