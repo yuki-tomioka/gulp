@@ -11,6 +11,8 @@ var plumber = require('gulp-plumber');//エラーが出てもタスクが止ま�
 var uglify = require('gulp-uglify');//jsの圧縮にgulp-uglifyを使う
 var imagemin = require('gulp-imagemin'); // 画像圧縮
 var pngquant = require('imagemin-pngquant'); // 画像圧縮
+var cache = require('gulp-cache');//処理の記録
+var del = require('del');
 
 gulp.task('sass'/*タスク名*/, function() {//処理内容
     gulp.src(['work/shared/css/**/*.scss'/*読み込み対象をwork内のすべての.scssに指定*/])
@@ -58,12 +60,17 @@ gulp.task('html', function(){
     .pipe(browserSync.stream());//ブラウザを再描画、リロードにしたい場合はreload()にする
 });
 
+// clean
+gulp.task('clean', function () {
+  del(['product/shared/img']);
+});
+
 gulp.task('imgmin', function(){
     gulp.src(['work/shared/img/**/*.{png,jpg}'])
-    .pipe(imagemin({
+    .pipe(cache(imagemin({
         progressive: true,
         use: [pngquant({quality: '65-80', speed: 1})]
-    }))
+    })))
     .pipe(gulp.dest('product/shared/img'));
 })
 
@@ -76,5 +83,5 @@ gulp.task('default', function() {//defaultで指定したtaskはgulpコマンド
     gulp.watch('work/**/*.scss'/*監視対象の指定*/,['sass']/*実行するタスクを指定*/);
     gulp.watch('work/**/*.html'/*監視対象の指定*/,['html']/*実行するタスクを指定*/);
     gulp.watch('work/**/*.js'/*監視対象の指定*/,['js']/*実行するタスクを指定*/);
-    gulp.watch('work/**/*.{png,jpg}'/*監視対象の指定*/,['imgmin']/*実行するタスクを指定*/);
+    gulp.watch('work/**/*.{png,jpg}'/*監視対象の指定*/,['clean','imgmin']/*実行するタスクを指定*/);
 });
