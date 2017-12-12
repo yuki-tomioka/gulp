@@ -1,0 +1,29 @@
+/*--------------------------------------------------
+
+  mainのコンテンツスタイルはこちらに記述していきます。
+
+--------------------------------------------------*/
+
+@import "../object/utility/modules";
+
+@mixin border($color: #808080) {
+  border: 1px solid $color;
+}
+
+#main {
+	width: 70%;
+	margin: 60px 30px 20px;
+	padding: 20px;
+	@include border;
+	@extend .mt-60;
+	@extend .left;
+	h1 {
+		font-size: 60px;
+	}
+}
+
+@media screen and (max-width:768px){
+  #main {
+    width:50%;
+  }
+}

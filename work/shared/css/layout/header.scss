@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/*=========================================================
+
+  headerのスタイルを記述していきます。
+
+=========================================================*/
+
+
+@mixin border($color: #808080) {
+  border: 1px solid $color;
+}
+
+#header {
+  height: 40px;
+  width: 100%;
+  background-color: #eee;
+  position: fixed;
+  top: 0;
+  right: 0;
+  @include border;
+}
+
+.menu{
+  display: flex;
+  line-height: 40px;
+  margin-left: 20px;
+  li {
+    padding-right: 20px;
+    &:hover {
+      color: #f00;
+    }
+    &:first-child {
+      margin-right: auto;
+    }
+  }
+}
+
+@media screen and (max-width:768px){
+  #header {
+  }
+
+  .menu{
+    font-size: 12px;
+  }
+}
+

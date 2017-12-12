@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/*=========================================================
+
+  基本のフォントの指定を記述。
+  いくつか参考のものをコメントアウトで記述していますので
+  使用できるものがあればクラスに追加してください。
+
+=========================================================*/
+
+$fontfamily: "小塚ゴシック体";
+
+.typography {
+  @if $fontfamily == "小塚ゴシック体" {
+    font-family: "小塚ゴシック体", "Koz Gothic", kozGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  } @else if $fontfamily == "游ゴシック" {
+    font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  } @else if $fontfamily == "源ノ角ゴシック" {
+    font-family: "源ノ角ゴシック JP Normal", "Source Han Sans JP Normal", Meiryo, sans-serif;
+  } @else if $fontfamily == "Noto Sans" {
+    font-family: "Helvetica Neue", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+  } @else if $fontfamily == "游明朝" {
+    font-family: "游明朝",　Georgia, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", "HGS明朝E", "メイリオ", Meiryo, serif;
+  } @else if $fontfamily == "源ノ明朝" {
+    font-family: "Source Han Serif JP", "Noto Serif CJK JP", "游明朝体", "Yu Mincho", YuMincho, serif;
+  } @else {
+    font-family: "小塚ゴシック体", "Koz Gothic", kozGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  }
+}
+
+
+// .typography {
+//   font-family: "小塚ゴシック体", "Koz Gothic", kozGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+//   color:#663333;
+//   font-size:16px;
+// }
+
+
+
+
+
+// ゴシック体の場合
+
+/*--------------------------------------------------
+
+游ゴシック優先指定　游ゴシックを表示できるデバイス向けの指定
+
+font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+
+--------------------------------------------------*/
+
+
+/*--------------------------------------------------
+
+源ノ角ゴシック
+
+font-family: "源ノ角ゴシック JP Normal", "Source Han Sans JP Normal", Meiryo, sans-serif;
+
+
+--------------------------------------------------*/
+
+
+/*--------------------------------------------------
+
+Noto Sans優先指定
+
+「Noto Sans Japanese」の呼び出し
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+font-family: "Helvetica Neue", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+
+--------------------------------------------------*/
+
+
+
+
+// 明朝体の場合
+
+/*--------------------------------------------------
+
+游明朝
+
+font-family: "游明朝",　Georgia, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", "HGS明朝E", "メイリオ", Meiryo, serif;
+
+font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+
+--------------------------------------------------*/
+
+
+/*--------------------------------------------------
+
+Source Han Serif(=源ノ明朝)フォント
+
+font-family: "Source Han Serif JP", "Noto Serif CJK JP", "游明朝体", "Yu Mincho", YuMincho, serif;
+
+--------------------------------------------------*/
+
+
+
+
+
+/*--------------------------------------------------
+
+読み込みが遅いwebフォント問題を改善する font-displayプロパティを使用。
+※フォント名やurlは使用するものを記述してください
+
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf) format('opentype');
+  font-display: swap;
+ }
+
+.fd-noto {
+  font-family: 'Noto Sans', 'sans-serif';
+}
+
+--------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

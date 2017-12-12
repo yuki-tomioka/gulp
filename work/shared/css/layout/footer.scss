@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/*=========================================================
+
+  footer部分のスタイルを記述していきます。
+
+=========================================================*/
+
+
+@mixin border($color: #808080) {
+  border: 1px solid $color;
+}
+
+#footer {
+  height: 100px;
+  margin: 0 auto;
+  @include border;
+  p {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width:768px){
+  #footer {
+    width: 10.66vw;
+    height: 10.66vw;
+  }
+}

@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*=========================================================
+
+  ボタンスタイルに関するものを全て記述しています。
+
+=========================================================*/
+
+.btn{
+  clear: both;
+  font-weight: bold;
+  text-align: center;
+}
+.btn a{
+  display: inline-block;
+  width: 400px;
+  height: 60px;
+  padding: 20px 80px;
+  box-sizing: border-box;
+  background-color: #ff6666;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 0.5em;
+}
+.btn a:hover{
+  background-color: #663333;
+}
+
+@media screen and (max-width:768px){
+  .btn a{
+    width: 72vw;
+    padding: 15px 4%;
+    height: 45px;
+    font-size: 14px;
+  }
+}
