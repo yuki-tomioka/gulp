@@ -226,7 +226,7 @@
 .right {
   float: right; }
 
-.clrFix:after {
+.clrfix:after {
   display: block;
   clear: both;
   height: 0;
@@ -241,7 +241,7 @@
 .pc_none {
   display: none; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .sp_none {
     display: none; }
   .pc_none {
