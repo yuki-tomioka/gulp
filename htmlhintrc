@@ -163,7 +163,7 @@
   tab: tab mode (only tab for indentation)
   false: disable rule
   */
-  "space-tab-mixed-disabled": "tab",
+  "space-tab-mixed-disabled": "space",
 
   /*
   Level: warning
