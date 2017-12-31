@@ -23,6 +23,8 @@ gulp.task('sass'/*タスク名*/, function() {//処理内容
     .pipe(sass({
         // outputStyle: 'expanded',//オプションとして出力形式を指定(expanded,nested,compact,compressed)
     }))//sassを実行
+    .pipe(sourcemaps.write({includeContent: false}))
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(autoprefixer({
         browsers: ['last 2 versions', 'ie >= 9']//対応ブラウザの指定
     }))
