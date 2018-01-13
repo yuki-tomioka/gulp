@@ -64,7 +64,7 @@ gulp.task('html', function(){
 
 // clean
 gulp.task('clean', function () {
-  del(['product/shared/img']);
+  del(['product/shared/img/{png,jpg}']);
 });
 
 gulp.task('imgmin', function(){
