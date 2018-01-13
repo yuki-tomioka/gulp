@@ -23,14 +23,14 @@ gulp.task('sass'/*タスク名*/, function() {//処理内容
     .pipe(sass({
         // outputStyle: 'expanded',//オプションとして出力形式を指定(expanded,nested,compact,compressed)
     }))//sassを実行
+    .pipe(cleancss())//cssを圧縮
     .pipe(sourcemaps.write({includeContent: false}))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(autoprefixer({
-        browsers: ['last 2 versions', 'ie >= 9']//対応ブラウザの指定
+        browsers: ['last 2 versions', 'ie >= 10']//対応ブラウザの指定
     }))
-    .pipe(cleancss())//cssを圧縮
     .pipe(concat('style.css'))//cssをstyle.cssとして結合
-    .pipe(sourcemaps.write('../maps'))//ソースマップを出力
+    .pipe(sourcemaps.write('.'))//ソースマップを出力
     .pipe(gulp.dest('product/shared/css'))//出力先を指定
     .pipe(browserSync.stream())//ブラウザを再描画、リロードにしたい場合はreload()にする
     .pipe(notify({//コンパイル完了を通知
